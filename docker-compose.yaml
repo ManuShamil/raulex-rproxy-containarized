@@ -1,0 +1,24 @@
+services:
+
+  back-end:
+    build: ./back-end
+    volumes:
+      - ./back-end/src:/usr/app/src
+    environment:
+      - PORT=8000
+      - REDIS_URL=redis://redis-storage
+      - WEB_URL=localhost
+    ports:
+      - 8000:8000
+    networks:
+      - backend
+
+  redis-storage:
+    build: ./redis-storage
+    volumes:
+      - ./redis-storage/data:/data
+    networks:
+      - backend
+
+networks:
+  backend:

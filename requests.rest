@@ -1,0 +1,18 @@
+
+POST http://localhost:8000/new HTTP/1.1
+content-type: application/json
+
+{
+    "forwardTo": "http://localhost:5000"
+}
+
+
+###
+
+
+POST http://sFslPnZbgxHaikL8UNTxLdntgcq2ZRLW.localhost:8000/ HTTP/1.1
+content-type: application/json
+
+{
+    "data": "Test"
+}
